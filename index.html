@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Portal</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      width: 350px;
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      text-align: center;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    select:focus, input:focus {
+      border-color: #667eea;
+      outline: none;
+      box-shadow: 0 0 5px rgba(102,126,234,0.5);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.03);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    #adminLogin, #studentBtn {
+      margin-top: 15px;
+      display: none;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h2>🔐 Login Portal</h2>
+
+  <select id="role" onchange="showLogin()">
+    <option value="" disabled selected hidden>Select Role</option>
+    <option value="student">🎓 Student</option>
+    <option value="admin">🛠️ Admin</option>
+  </select>
+
+  <!-- ADMIN LOGIN -->
+  <div id="adminLogin">
+    <input id="user" placeholder="Username">
+    <input id="pass" type="password" placeholder="Password">
+    <button onclick="login()">Login as Admin</button>
+  </div>
+
+  <!-- STUDENT BUTTON -->
+  <div id="studentBtn">
+    <button onclick="goStudent()">Continue as Student</button>
+  </div>
+
+</div>
+
+<script>
+function showLogin() {
+  let role = document.getElementById("role").value;
+
+  document.getElementById("adminLogin").style.display =
+    role === "admin" ? "block" : "none";
+
+  document.getElementById("studentBtn").style.display =
+    role === "student" ? "block" : "none";
+}
+
+function login() {
+  let user = document.getElementById("user").value;
+  let pass = document.getElementById("pass").value;
+
+  if (user === "admin" && pass === "1234") {
+    window.location.href = "admin.html";
+  } else {
+    alert("❌ Invalid Login");
+  }
+}
+
+function goStudent() {
+  window.location.href = "student.html";
+}
+</script>
+
+</body>
+</html>
