@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Success</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #eef2f7;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .box {
+      background: white;
+      padding: 30px;
+      display: inline-block;
+      border-radius: 10px;
+      box-shadow: 0 0 10px gray;
+    }
+
+    h2 {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>✅ Successfully Registered!</h2>
+  <p>Redirecting to student list...</p>
+</div>
+
+<script>
+  setTimeout(() => {
+    window.location.href = "list.html";
+  }, 2000);
+</script>
+
+</body>
+</html>

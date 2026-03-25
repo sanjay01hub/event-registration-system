@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registered Students</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      width: 90%;
+      max-width: 900px;
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    th {
+      background: #667eea;
+      color: white;
+      padding: 12px;
+    }
+
+    td {
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+
+    tr:hover {
+      background: #f5f7ff;
+    }
+
+    .no-data {
+      text-align: center;
+      padding: 20px;
+      color: gray;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto 0;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+  <h2>📋 Registered Students</h2>
+
+  <table id="table">
+    <tr>
+      <th>Name</th>
+      <th>College</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Event</th>
+      <th>Type</th>
+    </tr>
+  </table>
+
+  <button onclick="goBack()">➕ Register Another</button>
+</div>
+
+<script src="script.js"></script>
+
+<script>
+  loadStudents();
+</script>
+
+</body>
+</html>
